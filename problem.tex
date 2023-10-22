@@ -1,0 +1,22 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{amsmath}% For the equation* environment
+\title{运用贝叶斯模型计算恒星速度弥散}
+\PassOptionsToPackage{quiet}{fontspec}
+\usepackage[UTF8]{ctex}
+\author{author}
+\begin{document}
+\maketitle
+
+\newpage
+\section{单参数模型}
+\subsection{模型}
+猜测样本数据，即恒星的视向速度满足正态分布，即：
+$$\begin{aligned}
+p(y|\sigma^2)&\propto \sigma^{-n}\exp(-\frac{1}{2\sigma^2}\sum{n}{i=1}(y_i-\theta)^2) \\
+&=(\sigma^2)^{-\frac{n}{2}}e^{\frac{n}{2\sigma^2}v^2} 
+\end{aligned}
+$$
+由于正态分布的共轭先验分布为逆伽玛分布，故可以假定先验分布的形式为：
+$$p(\sigma^2)\propto(\sigma^2)^{-(\alpha+1)}e^{-\beta/\sigma^2}$$
+\subsection{程序}
+\end{document}
