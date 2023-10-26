@@ -1,4 +1,5 @@
 \documentclass[12pt, letterpaper]{article}
+\usepackage{graphicx}
 \usepackage{amsmath}% For the equation* environment
 \title{运用贝叶斯模型计算恒星速度弥散}
 \PassOptionsToPackage{quiet}{fontspec}
@@ -10,6 +11,10 @@
 \newpage
 \section{单参数模型}
 \subsection{模型}
+在Lamost网站[http://www.lamost.org/public/]，从北天极附近的20个平方度内下载数据。
+
+\includegraphics[scale=0.7]{3_0.png}
+
 根据样本数据，猜测恒星的视向速度满足正态分布，似然分布为：
 $$\begin{aligned}
 p(y|\sigma^2)&\propto \sigma^{-n}\exp\left(-\frac{1}{2\sigma^2}\sum^{n}_{i=1}(y_i-\theta)^2\right) \\
@@ -25,4 +30,13 @@ $$p(\sigma^2|y)\propto p(y|\sigma^2)p(\sigma^2)=(\sigma^2)^{-(\alpha+\frac n2+1)
 即$\sigma^2|y$也服从逆伽马分布，其参数为$(\alpha^{\prime}=\alpha+\frac n2,\beta^{\prime}=\frac{nv^2}{2}+\beta)$。
 \subsection{程序}
 另附
+\subsection{结果}
+区域星体速度弥散的平方为$\sigma^2=914.8km^2/s^2$
+
+\includegraphics[scale=0.7]{3_1.png}
+
+\includegraphics[scale=0.7]{3_2.png}
+
+\includegraphics[scale=0.7]{3_3.png}
+
 \end{document}
